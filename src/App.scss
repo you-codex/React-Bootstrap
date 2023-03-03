@@ -26,6 +26,33 @@
   background-color: #f5f5f5;
 }
 
+.navbar {
+  z-index: 1;
+}
+
+.lhs_sideBar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 4rem;
+  height: calc(100vh - 4rem);
+  border-right: 1px solid #ececec;
+}
+
+.SideNav {
+  display: flex !important;
+  height: 100% !important;
+  flex-direction: column;
+  max-height: calc(100vh - 8.5rem);
+}
+
+.SideNav_TableOfContents {
+  height: 100%!important;
+  overflow: auto;
+  margin-right: -15px;
+  padding-right: calc(15px + 1rem);
+  flex-wrap: nowrap;
+}
+
 // X-Small devices (portrait phones, less than 576px)
 @media (max-width: 768px) {
   .app_container {
