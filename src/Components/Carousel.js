@@ -10,7 +10,7 @@ function CarouselExample() {
 
   return (
     <div>
-      <div>
+      <div className="Carousel_1 h-50 w-50">
         <p>UnControlled Carousel</p>
         <Carousel>
           <Carousel.Item>
@@ -52,7 +52,7 @@ function CarouselExample() {
           </Carousel.Item>
         </Carousel>
       </div>
-      <div className="pt-5">
+      <div className="pt-5 h-50 w-50">
         <p>
           Controlled: You can also control the Carousel state, via the
           activeIndex prop and onSelect handler.

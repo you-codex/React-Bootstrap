@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.scss";
-import { Col, ListGroup, Row, Container, Form, Button } from "react-bootstrap";
+import { Col, ListGroup, Row, Form, Button } from "react-bootstrap";
 import Accordion from "./Components/Accordion";
 import Alert from "./Components/Alert";
 import Card from "./Components/Card";
@@ -14,6 +14,7 @@ import BreadcrumbExample from "./Components/Breadcrumb";
 import ButtonExample from "./Components/Buttons";
 import ButtonGroupExample from "./Components/Button Group";
 import CarouselExample from "./Components/Carousel";
+import OffCanvasExample from "./Components/offcanvas";
 
 const Home = () => {
   const [currentPage, setCurrentPage] = useState("Alert");
@@ -25,15 +26,15 @@ const Home = () => {
   };
 
   return (
-    <div className="home vh-100">
+    <div className="home vh-100 overflow-hidden">
       <Row className="navbar p-0 position-sticky top-0">
         <NavbarTop />
       </Row>
 
-      <Row className="lsh_rhs">
-        <Col xs={2} className="lhs_sideBar p-0 p-3 h-100">
+      <Row className="lsh_rhs vh-100">
+        <Col xs={2} className="lhs_sideBar p-0 h-100 shadow">
           <div className="sidebar_container flex-nowrap h-100">
-            <div className="search_form mt-2 px-2">
+            <div className="search_form mt-2 ps-4 pe-3">
               <Form className="d-flex">
                 <Form.Control
                   type="search"
@@ -46,7 +47,7 @@ const Home = () => {
               <hr className="mb-0"></hr>
             </div>
             <div className="SideNav">
-              <div className="SideNav_TableOfContents">
+              <div className="SideNav_TableOfContents ps-3 pb-3">
                 <ListGroup variant="flush">
                   <ListGroup.Item
                     onClick={() => handlePageClick("Alert")}
@@ -146,74 +147,90 @@ const Home = () => {
                   >
                     Navbar
                   </ListGroup.Item>
+                  <ListGroup.Item
+                    onClick={() => handlePageClick("OffCanvasExample")}
+                    active={activeIndex === "OffCanvasExample"}
+                    className={
+                      activeIndex === "OffCanvasExample" ? "active-item" : ""
+                    }
+                  >
+                    offCanvas
+                  </ListGroup.Item>
                 </ListGroup>
               </div>
             </div>
           </div>
         </Col>
-        <Col className="border p-0">
-          <div className="p-5">
-            {/* <div className="fs-3">Welcome To React Bootstrap</div> */}
-            {currentPage === "Alert" && (
-              <div>
-                <Alert />
-              </div>
-            )}
-            {currentPage === "Accordion" && (
-              <div className="">
-                <Accordion />
-              </div>
-            )}
-            {currentPage === "BatchExample" && (
-              <div>
-                <BatchExample />
-              </div>
-            )}
-            {currentPage === "BreadcrumbExample" && (
-              <div>
-                <BreadcrumbExample />
-              </div>
-            )}
-            {currentPage === "ButtonExample" && (
-              <div>
-                <ButtonExample />
-              </div>
-            )}
-            {currentPage === "ButtonGroupExample" && (
-              <div>
-                <ButtonGroupExample />
-              </div>
-            )}
-            {currentPage === "Card" && (
-              <div>
-                <Card />
-              </div>
-            )}
-            {currentPage === "CarouselExample" && (
-              <div>
-                <CarouselExample />
-              </div>
-            )}
-            {currentPage === "List" && (
-              <div>
-                <List />
-              </div>
-            )}
-            {currentPage === "ModalExample" && (
-              <div>
-                <ModalExample />
-              </div>
-            )}
-            {currentPage === "NavDropdownExample" && (
-              <div>
-                <NavDropdownExample />
-              </div>
-            )}
-            {currentPage === "Navbar" && (
-              <div>
-                <NavbarExample />
-              </div>
-            )}
+        <Col className=" p-0">
+          <div className="MainNav">
+            <div className="MainNav_TableOfContents p-5">
+              {/* <div className="fs-3">Welcome To React Bootstrap</div> */}
+              {currentPage === "Alert" && (
+                <div>
+                  <Alert />
+                </div>
+              )}
+              {currentPage === "Accordion" && (
+                <div className="">
+                  <Accordion />
+                </div>
+              )}
+              {currentPage === "BatchExample" && (
+                <div>
+                  <BatchExample />
+                </div>
+              )}
+              {currentPage === "BreadcrumbExample" && (
+                <div>
+                  <BreadcrumbExample />
+                </div>
+              )}
+              {currentPage === "ButtonExample" && (
+                <div>
+                  <ButtonExample />
+                </div>
+              )}
+              {currentPage === "ButtonGroupExample" && (
+                <div>
+                  <ButtonGroupExample />
+                </div>
+              )}
+              {currentPage === "Card" && (
+                <div>
+                  <Card />
+                </div>
+              )}
+              {currentPage === "CarouselExample" && (
+                <div>
+                  <CarouselExample />
+                </div>
+              )}
+              {currentPage === "List" && (
+                <div>
+                  <List />
+                </div>
+              )}
+              {currentPage === "ModalExample" && (
+                <div>
+                  <ModalExample />
+                </div>
+              )}
+              {currentPage === "NavDropdownExample" && (
+                <div>
+                  <NavDropdownExample />
+                </div>
+              )}
+              {currentPage === "Navbar" && (
+                <div>
+                  <NavbarExample />
+                </div>
+              )}
+              {currentPage === "OffCanvasExample" && (
+                <div>
+                  <OffCanvasExample />
+                </div>
+              )}
+            </div>
           </div>
         </Col>
         {/* <Col xs={2} className="border p-0">
