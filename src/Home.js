@@ -15,6 +15,7 @@ import ButtonExample from "./Components/Buttons";
 import ButtonGroupExample from "./Components/Button Group";
 import CarouselExample from "./Components/Carousel";
 import OffCanvasExample from "./Components/offcanvas";
+import PlaceHolderCardExample from "./Components/PlaceHolder";
 
 const Home = () => {
   const [currentPage, setCurrentPage] = useState("Alert");
@@ -156,6 +157,17 @@ const Home = () => {
                   >
                     offCanvas
                   </ListGroup.Item>
+                  <ListGroup.Item
+                    onClick={() => handlePageClick("PlaceHolderCardExample")}
+                    active={activeIndex === "PlaceHolderCardExample"}
+                    className={
+                      activeIndex === "PlaceHolderCardExample"
+                        ? "active-item"
+                        : ""
+                    }
+                  >
+                    PlaceHolderCard
+                  </ListGroup.Item>
                 </ListGroup>
               </div>
             </div>
@@ -228,6 +240,11 @@ const Home = () => {
               {currentPage === "OffCanvasExample" && (
                 <div>
                   <OffCanvasExample />
+                </div>
+              )}
+              {currentPage === "PlaceHolderCardExample" && (
+                <div>
+                  <PlaceHolderCardExample />
                 </div>
               )}
             </div>
