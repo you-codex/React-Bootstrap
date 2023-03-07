@@ -1,6 +1,5 @@
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import React, { useState } from "react";
 
 function NavDropdownExample() {
   return (
